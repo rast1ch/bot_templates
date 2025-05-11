@@ -1,26 +1,23 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+from callbacks.menu import MenuCallbackData
+from enums import MenuItemsEnum
+
 
 MENU_KEYBOARD = InlineKeyboardMarkup(
     inline_keyboard=[
         [
             InlineKeyboardButton(
-                text="📊 Statistics",
-                callback_data="menu:statistics",
-            ),
-            InlineKeyboardButton(
-                text="🗂️ Files",
-                callback_data="menu:files",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
                 text="⚙️ Settings",
-                callback_data="menu:settings",
+                callback_data=MenuCallbackData(
+                    menu_item=MenuItemsEnum.SETTINGS,
+                ).pack(),
             ),
             InlineKeyboardButton(
-                text="❓ Help",
-                callback_data="menu:help",
+                text="❓ Info",
+                callback_data=MenuCallbackData(
+                    menu_item=MenuItemsEnum.INFO,
+                ).pack(),
             ),
         ],
     ],

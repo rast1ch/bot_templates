@@ -9,6 +9,7 @@ router = Router(name=__name__)
 
 
 @router.message(Command("start"))
+@router.message(Command("menu"))
 async def start_command(message: Message) -> None:
     await message.answer(
         "Hello! I'm your bot. How can I assist you today?",
